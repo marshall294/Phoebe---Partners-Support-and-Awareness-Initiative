@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real testimonies from people impacted by Phoebe & Partners Support and Awareness Initiative.">
+    <meta name="keywords" content="NGO, testimonies, success stories, community impact, support, awareness">
+    <meta name="author" content="Phoebe & Partners">
+    <title>Testimonies - Phoebe & Partners</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { overflow-x: hidden; }
+        
+        /* Fixed Header */
+        header {
+            background: #004085; color: white; padding: 1rem;
+            text-align: center; position: fixed; width: 100%; top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none; display: flex; justify-content: center;
+            flex-wrap: wrap; gap: 1rem;
+        }
+        nav ul li a {
+            color: white; text-decoration: none; padding: 10px; display: block;
+        }
+
+        /* Hero Sections */
+        .hero {
+            position: relative; width: 100%; height: 80vh; display: flex;
+            align-items: center; justify-content: center; text-align: center;
+            color: white; font-size: 2rem; font-weight: bold;
+        }
+        .hero img {
+            width: 100%; height: 100%; object-fit: cover; position: absolute;
+            top: 0; left: 0; z-index: -1;
+        }
+        .hero .overlay {
+            background: rgba(0, 0, 0, 0.5); width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0; z-index: -1;
+        }
+
+        /* Video Hero */
+        .video-hero {
+            position: relative; width: 100%; height: 80vh; display: flex;
+            align-items: center; justify-content: center; text-align: center;
+            color: white; font-size: 2rem; font-weight: bold;
+        }
+        .video-hero video {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -1;
+        }
+        .video-hero .overlay {
+            background: rgba(0, 0, 0, 0.5); width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0; z-index: -1;
+        }
+
+        /* Testimonies Section */
+        .container {
+            max-width: 1200px; margin: 80px auto; padding: 20px;
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 20px;
+        }
+        .video-box {
+            flex: 1 1 calc(33.333% - 20px); /* 3 per row on large screens */
+            max-width: 380px; background: #f4f4f4;
+            border-radius: 10px; overflow: hidden;
+            text-align: center; padding: 10px;
+        }
+        .video-box iframe {
+            width: 100%; height: 200px;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #222; color: white; padding: 30px;
+            text-align: center; margin-top: 40px;
+        }
+        .footer a {
+            color: #ddd; text-decoration: none; margin: 0 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .video-box {
+                flex: 1 1 calc(50% - 20px); /* 2 per row on tablets */
+            }
+        }
+        @media (max-width: 480px) {
+            .hero, .video-hero {
+                height: 60vh;
+                font-size: 1.5rem;
+            }
+            .video-box {
+                flex: 1 1 100%; /* 1 per row on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="testimonies.html">Testimonies</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Image -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <img src="https://www.who.int/images/default-source/health-and-climate-change/4-sea-level-rise-flooding-chennai-india-who-shanth-kumar-(1).jpg?sfvrsn=99d2f39e_4" alt="Testimony Image">
+        <h1>Real Stories of Change</h1>
+    </section>
+
+    <!-- Hero Section with Video Background -->
+    <section class="video-hero">
+        <div class="overlay"></div>
+        <video autoplay muted loop>
+            <source src="testimony-video.mp4" type="video/mp4">
+        </video>
+        <h1>Transforming Lives Every Day</h1>
+    </section>
+
+    <!-- Testimonies Section -->
+    <div class="container">
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
+            <p>John's Story: Overcoming Challenges</p>
+        </div>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID2" allowfullscreen></iframe>
+            <p>Mary's Journey: From Struggle to Success</p>
+        </div>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID3" allowfullscreen></iframe>
+            <p>Hope Restored: A Community Impact Story</p>
+        </div>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID4" allowfullscreen></iframe>
+            <p>Healthcare Support that Changed My Life</p>
+        </div>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID5" allowfullscreen></iframe>
+            <p>How Education Support Opened New Doors</p>
+        </div>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID6" allowfullscreen></iframe>
+            <p>Women Empowerment: A Success Story</p>
+        </div>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID7" allowfullscreen></iframe>
+            <p>Breaking Barriers: The Power of Community</p>
+        </div>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID8" allowfullscreen></iframe>
+            <p>Creating Opportunities for Youth</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
+        <nav>
+            <a href="programmes.html">Programmes</a> |
+            <a href="get-involved.html">Get Involved</a> |
+            <a href="testimonies.html">Testimonies</a> |
+            <a href="success-stories.html">Success Stories</a> |
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a> |
+            <a href="partners.html">Partners</a>
+        </nav>
+    </footer>
+</body>
+</html>

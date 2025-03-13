@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our annual and financial reports at Phoebe & Partners Support and Awareness Initiative.">
+    <meta name="keywords" content="NGO, reports, annual reports, financial reports, transparency, accountability">
+    <meta name="author" content="Phoebe & Partners">
+    <title>Reports - Phoebe & Partners</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { overflow-x: hidden; }
+
+        /* Fixed Header */
+        header {
+            background: #004085; color: white; padding: 1rem;
+            text-align: center; position: fixed; width: 100%; top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none; display: flex; justify-content: center;
+            flex-wrap: wrap; gap: 1rem;
+        }
+        nav ul li a {
+            color: white; text-decoration: none; padding: 10px; display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative; width: 100%; height: 70vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; font-size: 2rem;
+            font-weight: bold; margin-top: 70px; /* Ensures no overlap */
+        }
+        .hero img {
+            width: 100%; height: 100%; object-fit: cover;
+            position: absolute; top: 0; left: 0; z-index: -1;
+        }
+        .hero .overlay {
+            background: rgba(0, 0, 0, 0.5); width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0; z-index: -1;
+        }
+
+        /* Reports Section */
+        .container {
+            max-width: 1200px; margin: 40px auto; padding: 20px;
+        }
+        .section-title {
+            font-size: 1.8rem; font-weight: bold; color: #004085;
+            margin-bottom: 20px; text-align: center;
+        }
+        .report-list {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 20px;
+        }
+        .report-item {
+            flex: 1 1 calc(50% - 20px); /* Two per row on larger screens */
+            max-width: 500px; background: #f4f4f4; padding: 20px;
+            border-radius: 10px; text-align: center;
+        }
+        .report-item img {
+            width: 100%; max-height: 200px; object-fit: cover;
+            border-radius: 10px;
+        }
+        .report-item h3 {
+            font-size: 1.2rem; color: #333; margin-top: 10px;
+        }
+        .report-item p {
+            font-size: 0.9rem; color: #555; margin-bottom: 10px;
+        }
+        .download-btn {
+            display: inline-block; background: #004085; color: white;
+            padding: 10px 15px; text-decoration: none; border-radius: 5px;
+            font-weight: bold;
+        }
+        .download-btn:hover {
+            background: #002c5f;
+        }
+        /* Growth Graph Section */
+        .growth-graph {
+            text-align: center;
+            padding: 40px;
+            background: #eef5ff;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+
+        /* Footer */
+        .footer {
+            background: #222; color: white; padding: 30px;
+            text-align: center; margin-top: 40px;
+        }
+        .footer a {
+            color: #ddd; text-decoration: none; margin: 0 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .report-item {
+                flex: 1 1 100%; /* One per row on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="testimonies.html">Testimonies</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <img src="background1.png" alt="Reports Background">
+        <h1>Transparency & Accountability</h1>
+    </section>
+
+    <!-- Annual Reports Section -->
+    <div class="container">
+        <h2 class="section-title">Annual Reports</h2>
+        <div class="report-list">
+            <div class="report-item">
+                <img src="hero.png" alt="Annual Report 2024">
+                <h3>Annual Report 2024</h3>
+                <p>A detailed overview of our activities, impact, and growth in 2024.</p>
+                <a href="annual-report-2024.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+            <div class="report-item">
+                <img src="hero.png" alt="Annual Report 2023">
+                <h3>Annual Report 2023</h3>
+                <p>Our achievements and challenges faced in 2023.</p>
+                <a href="annual-report-2023.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+            <div class="report-item">
+                <img src="hero.png" alt="Annual Report 2024">
+                <h3>Annual Report 2022</h3>
+                <p>A detailed overview of our activities, impact, and growth in 2024.</p>
+                <a href="annual-report-2024.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+            <div class="report-item">
+                <img src="hero.png" alt="Annual Report 2023">
+                <h3>Annual Report 2021</h3>
+                <p>Our achievements and challenges faced in 2023.</p>
+                <a href="annual-report-2023.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Financial Reports Section -->
+    <div class="container">
+        <h2 class="section-title">Financial Reports</h2>
+        <div class="report-list">
+            <div class="report-item">
+                <img src="image4.jpg" alt="Audit Report 2024">
+                <h3>Audit Report 2024</h3>
+                <p>A comprehensive review of our finances and transparency for 2024.</p>
+                <a href="audit-report-2024.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+            <div class="report-item">
+                <img src="image4.jpg" alt="Audit Report 2023">
+                <h3>Audit Report 2023</h3>
+                <p>Ensuring accountability through an independent audit of 2023.</p>
+                <a href="audit-report-2023.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+            <div class="report-item">
+                <img src="image4.jpg" alt="Audit Report 2024">
+                <h3>Audit Report 2022</h3>
+                <p>A comprehensive review of our finances and transparency for 2024.</p>
+                <a href="audit-report-2024.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+            <div class="report-item">
+                <img src="image4.jpg" alt="Audit Report 2023">
+                <h3>Audit Report 2021</h3>
+                <p>Ensuring accountability through an independent audit of 2023.</p>
+                <a href="audit-report-2023.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+        </div>
+    </div>
+    <!-- Growth Graph -->
+    <div class="container">
+        <div class="growth-graph">
+            <h2 class="section-title">Our Growth Over the Years</h2>
+            <canvas id="growthChart"></canvas>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
+        <nav>
+            <a href="programmes.html">Programmes</a> |
+            <a href="get-involved.html">Get Involved</a> |
+            <a href="testimonies.html">Testimonies</a> |
+            <a href="success-stories.html">Success Stories</a> |
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a> |
+            <a href="partners.html">Partners</a>
+        </nav>
+    </footer>
+    <script>
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'People Helped (in thousands)',
+                    data: [5, 10, 15, 22, 30],
+                    borderColor: '#004085',
+                    backgroundColor: 'rgba(0, 64, 133, 0.2)',
+                    borderWidth: 2,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#004085'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

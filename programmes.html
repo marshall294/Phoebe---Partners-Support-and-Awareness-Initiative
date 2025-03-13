@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our impactful programmes at Phoebe & Partners Support and Awareness Initiative.">
+    <meta name="keywords" content="NGO, community support, education, healthcare, empowerment, sustainability">
+    <meta name="author" content="Phoebe & Partners">
+    <title>Our Programmes - Phoebe & Partners</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { overflow-x: hidden; }
+        header { background: #004085; color: white; padding: 1rem; text-align: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+        nav ul li a { color: white; text-decoration: none; padding: 10px; display: block; }
+        .container { max-width: 1200px; margin: 100px auto 0; padding: 20px; }
+        .programme { padding: 50px 20px; text-align: left; margin-bottom: 20px; margin-top: 20px; border-radius: 10px; color: white; position: relative; }
+        .programme h2 { font-size: 2rem; animation: fadeIn 2s ease-in-out; }
+        .programme img { width: 100px; height: auto; position: absolute; top: 20px; right: 20px; border-radius: 5px; }
+        .footer { background: #222; color: white; padding: 30px; text-align: center; }
+        .footer a { color: #ddd; text-decoration: none; margin: 0 10px; }
+        
+        /* Colors for each section */
+        .edu-support { background: #f39c12; }
+        .healthcare { background: #16a085; }
+        .youth-empowerment { background: #2980b9; }
+        .women-empowerment { background: #8e44ad; }
+        .sustainability { background: #27ae60; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#edu-support">Education Support</a></li>
+                <li><a href="#healthcare">Healthcare Access</a></li>
+                <li><a href="#youth-empowerment">Youth</a></li>
+                <li><a href="#women-empowerment">Women</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <section id="edu-support" class="programme edu-support">
+            <h2>Education Support Programme</h2>
+            <p>Providing learning materials, scholarships, and mentorship for underprivileged children.</p>
+        </section>
+        
+        <section id="healthcare" class="programme healthcare">
+            <h2>Healthcare Access Programme</h2>
+            <p>Offering free medical check-ups, health awareness campaigns, and access to essential medicines.</p>
+        </section>
+        
+        <section id="youth-empowerment" class="programme youth-empowerment">
+            <h2>Youth Empowerment Programme</h2>
+            <p>Providing vocational training, career guidance, and entrepreneurship opportunities for young people.</p>
+        </section>
+        
+        <section id="women-empowerment" class="programme women-empowerment">
+            <h2>Women Empowerment Initiative</h2>
+            <p>Encouraging economic independence for women through skill acquisition and financial literacy.</p>
+        </section>
+        
+        <section id="sustainability" class="programme sustainability">
+            <h2>Sustainability and Community Development</h2>
+            <p>Promoting environmental sustainability and self-sufficient community projects.</p>
+        </section>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
+        <nav>
+            <a href="programmes.html">Programmes</a> |
+            <a href="get-involved.html">Get Involved</a> |
+            <a href="testimonies.html">Testimonies</a> |
+            <a href="success-stories.html">Success Stories</a> |
+            <a href="#"><img src="facebook.png" alt="Facebook" width="20"></a>
+            <a href="#"><img src="email.png" alt="Email" width="20"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram" width="20"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter" width="20"></a> |
+            <a href="partners.html">Partners</a>
+        </nav>
+    </footer>
+</body>
+</html>

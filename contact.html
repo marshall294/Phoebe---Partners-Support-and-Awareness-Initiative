@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Phoebe & Partners - Get in touch with us for inquiries and support.">
+    <title>Contact Us - Phoebe & Partners</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; }
+        .hero {
+            background: url('image4.jpg') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .contact-form { text-align: center; padding: 40px 20px; }
+        .contact-form input, .contact-form textarea {
+            width: 90%; max-width: 500px;
+            margin: 10px 0;
+            padding: 12px;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 12px 25px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .map { text-align: center; padding: 40px 20px; }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="testimonies.html">Testimonies</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Contact Us</h1>
+    </section>
+
+    <section class="contact-form">
+        <h2>Get in Touch</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="text" id="subject" placeholder="Subject" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="feedback" style="color: green; display: none;">Message sent successfully!</p>
+    </section>
+
+    <section class="map">
+        <h2>Our Location</h2>
+        <iframe src="https://www.google.com/maps/embed?..." width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
+    </footer>
+    
+    <script>
+const firebaseConfig = {
+  apiKey: "AIzaSyCXveIGWuc54YU9sM6PXDAfx2WPKA6dopg",
+  authDomain: "year5s.firebaseapp.com",
+  databaseURL: "https://year5s-default-rtdb.firebaseio.com",
+  projectId: "year5s",
+  storageBucket: "year5s.firebasestorage.app",
+  messagingSenderId: "981035217689",
+  appId: "1:981035217689:web:42c67b9b0d021e429bcb88"
+};
+        
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            db.collection('messages').add({
+                name, email, subject, message,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(() => {
+                document.getElementById('feedback').style.display = 'block';
+                document.getElementById('contactForm').reset();
+            }).catch(error => console.error('Error adding message:', error));
+        });
+    </script>
+</body>
+</html>
