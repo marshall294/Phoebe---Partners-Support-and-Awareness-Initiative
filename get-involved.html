@@ -3,62 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get involved with Phoebe & Partners Support and Awareness Initiative. Become a volunteer, donate, explore career opportunities, and more.">
-    <meta name="keywords" content="NGO, volunteer, donate, careers, community service">
-    <meta name="author" content="Phoebe & Partners">
-    <title>Get Involved - Phoebe & Partners</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Get Involved - Phoebe Support & Awareness Initiative</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { overflow-x: hidden; }
-        header { background: #004085; color: white; padding: 1rem; text-align: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
-        nav ul li a { color: white; text-decoration: none; padding: 10px; display: block; }
-        .container { max-width: 1200px; margin: 100px auto 0; padding: 20px; }
-        .slider { width: 100%; height: 300px; overflow: hidden; position: relative; }
-        .slider img { width: 100%; height: 100%; position: absolute; opacity: 0; transition: opacity 1s ease-in-out; }
-        .slider img.active { opacity: 1; }
-        .intro { text-align: center; padding: 40px; background: #f8f9fa; }
-        .section { padding: 20px; text-align: center; cursor: pointer; background: #007bff; color: white; margin: 10px; border-radius: 5px; }
-        .hidden-content { display: none; padding: 20px; background: #e9ecef; margin: 10px; border-radius: 5px; }
-        .footer { background: #222; color: white; padding: 30px; text-align: center; }
-        .footer a { color: #ddd; text-decoration: none; margin: 0 10px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #f4f4f9;
+            text-align: center;
+            padding-top: 200px;
+            line-height: 1.8;
+        }
+        .logo-container {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 130px;
+            width: 100%;
+            background: #fff;
+            z-index: 1001;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .logo-frame {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 6px solid #007BFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotateRing 4s linear infinite;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: url('logo.jpeg') no-repeat center/cover;
+        }
+        @keyframes rotateRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .header {
+            position: fixed;
+            top: 130px;
+            width: 100%;
+            background: #007BFF;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .header .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        .header .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 18px;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+        .header .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+        .content h1 {
+            color: #007bff;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .cta-buttons {
+            margin-top: 40px;
+        }
+        .cta-buttons a {
+            text-decoration: none;
+            padding: 14px 24px;
+            margin: 10px;
+            background: #007bff;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .cta-buttons a:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+        footer {
+            background: url('hero.png') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+        .footer nav {
+            margin-top: 20px;
+        }
+        .footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #FFD700;
+        }
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        .whatsapp-icon img {
+            width: 55px;
+            height: 55px;
+        }
+        @media (max-width: 768px) {
+            .header .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            .content {
+                padding: 30px;
+            }
+            .content h1 {
+                font-size: 28px;
+            }
+            .content p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="get-involved.html">Get Involved</a></li>
-            </ul>
-        </nav>
+
+    <div class="logo-container">
+        <div class="logo-frame">
+            <div class="logo"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+            <li><a href="testimonies.html">Testimonies</a></li>
+            <li><a href="stories.html">Our Stories</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
     </header>
     
-    <div class="container">
-        <div class="slider">
-            <img src="image1.jpg" class="active" alt="Volunteer Image 1">
-            <img src="image2.jpg" alt="Volunteer Image 2">
-            <img src="image3.jpg" alt="Volunteer Image 3">
+    <div class="content">
+        <h1>Upcoming Event: Project Pad 4,000 Girls</h1>
+        <p>Empowering 4,000 teenage girls, underprivileged women, and those with disabilities through menstrual health management solutions. Breaking stigmas, promoting dignity!</p>
+        <p><strong>Sponsor 1 girl:</strong> ₦2,500 | <strong>Sponsor 10 girls:</strong> ₦25,000</p>
+        
+        <h2>Our Impactful Projects</h2>
+        <p><strong>Phoebe’s & Partners Street Feeding:</strong> Feeding over 100 people on the streets of Suleja.</p>
+        <p><strong>Visit a Hospital Project:</strong> Supporting patients at Suleja General Hospital.</p>
+        <p><strong>A Visit to Destiny Orphanage:</strong> Sharing joy and warmth with orphaned children.</p>
+        
+        <h2>Our Initiative Focuses on Four Core Pillars:</h2>
+        <p>Health Awareness | Humanitarian Aid | Education Support | Youth Empowerment</p>
+        
+        <div class="cta-buttons">
+            <a href="#">Sign Up for Volunteering</a>
+            <a href="#">Donate</a>
+            <a href="#">Volunteer Availability</a>
+            <a href="#">Careers</a>
         </div>
-        
-        <div class="intro">
-            <h2>Get Involved</h2>
-            <p>Join us in making a difference! Whether you want to volunteer, donate, or explore career opportunities, there are many ways to support our mission. Your involvement helps us provide education, healthcare, and empowerment programs to those in need.</p>
-        </div>
-
-        <div class="section" onclick="toggleSection('volunteer')">Sign Up for Volunteering</div>
-        <div id="volunteer" class="hidden-content">Fill out our volunteer application form to start making an impact.</div>
-        
-        <div class="section" onclick="toggleSection('donate')">Donate</div>
-        <div id="donate" class="hidden-content">Support our programs through one-time or recurring donations.</div>
-        
-        <div class="section" onclick="toggleSection('availability')">Volunteer Availability</div>
-        <div id="availability" class="hidden-content">Check available volunteer positions and schedules.</div>
-        
-        <div class="section" onclick="toggleSection('careers')">Careers</div>
-        <div id="careers" class="hidden-content">Explore career opportunities within our organization.</div>
     </div>
     
     <footer class="footer">
@@ -67,29 +211,13 @@
             <a href="programmes.html">Programmes</a> |
             <a href="get-involved.html">Get Involved</a> |
             <a href="testimonies.html">Testimonies</a> |
-            <a href="success-stories.html">Success Stories</a> |
-            <a href="#"><img src="facebook.png" alt="Facebook" width="20"></a>
-            <a href="#"><img src="email.png" alt="Email" width="20"></a>
-            <a href="#"><img src="instagram.png" alt="Instagram" width="20"></a>
-            <a href="#"><img src="twitter.png" alt="Twitter" width="20"></a> |
-            <a href="partners.html">Partners</a>
+            <a href="success-stories.html">Success Stories</a>
         </nav>
     </footer>
 
-    <script>
-        let index = 0;
-        function slideImages() {
-            const images = document.querySelectorAll('.slider img');
-            images.forEach(img => img.classList.remove('active'));
-            images[index].classList.add('active');
-            index = (index + 1) % images.length;
-        }
-        setInterval(slideImages, 3000);
+    <a href="https://wa.me/2348102341648" class="whatsapp-icon">
+        <img src="whatsapp2.png" alt="WhatsApp">
+    </a>
 
-        function toggleSection(id) {
-            const section = document.getElementById(id);
-            section.style.display = section.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
 </body>
 </html>
