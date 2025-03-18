@@ -266,19 +266,393 @@
     </div>
 </section>
 
-    <section class="section"><h2>Our Programmes</h2><p>To raise awareness, understanding and knowledge on Hepatitis  and other health issues  among the community for a healthy society/community.</p><video controls><source src="pictures/pheobe (1).mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Upcoming Events</h2><p>Pad a girl today.</p><img src="education1.jpeg" alt="Get Involved"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Testimonies</h2><p>To eliminate gender inequalities in primary and secondary education by achieving equality in education, with ensuring girl’s full and equal access to basic education of good quality.</p><video controls><source src="video.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
+<section class="section">
+    <h2>Our Programmes</h2>
+    <p>To raise awareness, understanding, and knowledge on Hepatitis and other health issues among the community for a healthy society/community.</p>
+    
+    <video id="videoPlayer1" oncontextmenu="return false;" playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="video-controls">
+        <button onclick="playVideo('videoPlayer1')">Play</button>
+        <button onclick="stopVideo('videoPlayer1')">Stop</button>
+    </div>
+
+    <button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" 
+        onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" 
+        onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">
+        Explore More
+    </button>
+</section>
+
+<style>
+    video {
+        display: block;
+        width: 70%;
+        max-width: 700px;
+        height: auto;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+
+    .video-controls {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .video-controls button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .video-controls button:hover {
+        background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+        video {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+</style>
+
+<script>
+// Function to play video based on the video ID
+function playVideo(videoId) {
+    const video = document.getElementById(videoId);
+    video.play();
+}
+
+// Function to stop video based on the video ID
+function stopVideo(videoId) {
+    const video = document.getElementById(videoId);
+    video.pause();
+    video.currentTime = 0;
+}
+
+// Prevent right-click and shortcuts
+document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && (e.key === 's' || e.key === 'S' || e.key === 'u' || e.key === 'U' || e.key === 'p' || e.key === 'P')) {
+        e.preventDefault();
+    }
+});
+
+</script>
+
+<section class="section"> 
+    <h2>Upcoming Events</h2>
+    <p>Pad a girl today.</p>
+
+    <!-- Container for images with transitions -->
+    <div class="image-container">
+        <img class="image-slide" src="https://www.aciafrica.org/images/dimension-2024-03-07t173455_1709851828.jpg" alt="Event 1">
+        <img class="image-slide" src="https://donate-ng.com/upload/project_image/40images%20(3).jpeg" alt="Event 2">
+        <img class="image-slide" src="https://tribuneonlineng.com/wp-content/uploads/2021/03/IMG_0728.jpg" alt="Event 3">
+        <img class="image-slide" src="https://donate-ng.com/upload/project_image/20210504_023508.png" alt="Event 4">
+        <img class="image-slide" src="https://media.thisnigeria.com/2021/02/pad-780x470.jpg" alt="Event 5">
+    </div>
+
+    <!-- Explore More Button -->
+    <button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button>
+</section>
+
+<style>
+    /* Styling for the section */
+    .section {
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Container for images */
+    .image-container {
+        position: relative;
+        width: 80%;
+        height: 400px;
+        overflow: hidden;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Basic styling for images */
+    .image-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    }
+
+    /* Transition effect for images */
+    .slide-in-left {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .slide-out-left {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    .slide-in-right {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .slide-out-right {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    /* Ensure responsiveness */
+    @media (max-width: 768px) {
+        .image-container {
+            height: 200px;
+        }
+    }
+
+    /* Button Styling */
+    button {
+        background: linear-gradient(to bottom, #4CAF50, #2E7D32);
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px #1B5E20;
+        transition: all 0.2s;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<script>
+    // Get all images
+    const images = document.querySelectorAll('.image-slide');
+    let currentImageIndex = 0;
+
+    // Function to apply transitions to images
+    function changeImage() {
+        // Remove any previous transition classes
+        images.forEach(image => {
+            image.classList.remove('slide-in-left', 'slide-out-left', 'slide-in-right', 'slide-out-right');
+        });
+
+        // Apply the slide-out effect to the current image
+        images[currentImageIndex].classList.add('slide-out-left'); // Slide out to the left
+
+        // Move to the next image
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+
+        // Apply the slide-in effect to the next image
+        images[currentImageIndex].classList.add('slide-in-left'); // Slide in from the right
+    }
+
+    // Change image every 5 seconds
+    setInterval(changeImage, 5000);
+
+    // Initially show the first image with transition
+    changeImage();
+</script>
+
+
+
+<section class="section">
+    <h2>Testimonies</h2>
+    <p>To eliminate gender inequalities in primary and secondary education by achieving equality in education, with ensuring girl’s full and equal access to basic education of good quality.</p>
+    
+    <video id="videoPlayer2" oncontextmenu="return false;" playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="video-controls">
+        <button onclick="playVideo('videoPlayer2')">Play</button>
+        <button onclick="stopVideo('videoPlayer2')">Stop</button>
+    </div>
+
+    <button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" 
+        onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" 
+        onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">
+        Explore More
+    </button>
+</section>
     <section class="section"><h2>Our Stories</h2><p>To improve the environmental condition for nomads and rural people.</p><img src="pictures/pheobe (19).jpeg" alt="Our Stories"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Reports</h2><p>Access our research, reports, and transparency documents.</p><video controls><source src="video.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
+<section class="section">
+    <h2>Reports</h2>
+    <p>Access our research, reports, and transparency documents.</p>
+    
+    <video id="videoPlayer3" oncontextmenu="return false;" playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="video-controls">
+        <button onclick="playVideo('videoPlayer3')">Play</button>
+        <button onclick="stopVideo('videoPlayer3')">Stop</button>
+    </div>
+
+    <button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" 
+        onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" 
+        onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">
+        Explore More
+    </button>
+</section>
     <section class="section"><h2>Our Partners</h2><p>Meet the organizations that support our mission.</p><img src="pictures/pheobe (55).jpeg" alt="Our Partners"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Get Involved</h2><p>Stay informed about our latest events and activities.</p><video controls><source src="video.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Success Stories</h2><p>Stories of those who have benefited from our initiatives.</p><img src="hero.png" alt="Success Stories"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Career Opportunities</h2><p>Explore job opportunities with us.</p><video controls><source src="video.mp4" type="video/mp4"></video><button onclick="window.location.href='#'" style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" 
-    onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" 
-    onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">
-    Explore More
-</button>
+<section class="section">
+    <h2>Get Involved</h2>
+    <p>Stay informed about our latest events and activities.</p>
+    
+    <video id="videoPlayer4" oncontextmenu="return false;" playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="video-controls">
+        <button onclick="playVideo('videoPlayer4')">Play</button>
+        <button onclick="stopVideo('videoPlayer4')">Stop</button>
+    </div>
+
+    <button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" 
+        onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" 
+        onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">
+        Explore More
+    </button>
+</section>
+
+<section class="section">
+    <h2>Success Stories</h2>
+    <p>Stories of those who have benefited from our initiatives.</p>
+    <img id="heroImage" src="pictures/pheobe (19).jpeg" alt="Success Stories">
+    <button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button>
+</section>
+
+<style>
+    /* Styling for the section */
+    .section {
+        text-align: center;
+        padding: 20px;
+    }
+
+    #heroImage {
+        width: 300px;
+        height: auto;
+        transition: transform 1s ease, box-shadow 1s ease;
+    }
+
+    /* Keyframe animations for emphasis effects */
+    @keyframes bounce {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        50% { transform: translateX(10px); }
+        75% { transform: translateX(-10px); }
+        100% { transform: translateX(0); }
+    }
+
+    @keyframes zoomIn {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.1); }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0); }
+        100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    /* Add class for each animation */
+    .bounce {
+        animation: bounce 1s infinite;
+    }
+
+    .shake {
+        animation: shake 0.5s infinite;
+    }
+
+    .zoom-in {
+        animation: zoomIn 2s infinite;
+    }
+
+    .spin {
+        animation: spin 2s infinite;
+    }
+
+    .pulse {
+        animation: pulse 1.5s infinite;
+    }
+</style>
+
+<script>
+    // Define the array of animation classes
+    const animations = ['bounce', 'shake', 'zoom-in', 'spin', 'pulse'];
+    let currentAnimationIndex = 0;
+
+    // Get the image element
+    const heroImage = document.getElementById('heroImage');
+
+    // Function to change animation every 5 seconds
+    function changeAnimation() {
+        // Remove the current animation class
+        heroImage.classList.remove(animations[currentAnimationIndex]);
+
+        // Update the animation index and apply the new animation class
+        currentAnimationIndex = (currentAnimationIndex + 1) % animations.length;
+        heroImage.classList.add(animations[currentAnimationIndex]);
+    }
+
+    // Change animation every 5 seconds
+    setInterval(changeAnimation, 5000);
+
+    // Initially apply the first animation
+    changeAnimation();
+</script>
+
+<section class="section">
+    <h2>Career Opportunities</h2>
+    <p>Explore job opportunities with us.</p>
+    
+    <video id="videoPlayer5" oncontextmenu="return false;" playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="video-controls">
+        <button onclick="playVideo('videoPlayer5')">Play</button>
+        <button onclick="stopVideo('videoPlayer5')">Stop</button>
+    </div>
+
+    <button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" 
+        onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" 
+        onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">
+        Explore More
+    </button>
+</section>
+
 
 </div>
     
