@@ -3,92 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore our impactful programmes at Phoebe & Partners Support and Awareness Initiative.">
-    <meta name="keywords" content="NGO, community support, education, healthcare, empowerment, sustainability">
+    <meta name="description" content="Phoebe & Partners Support and Awareness Initiative - Empowering communities through support and awareness programs.">
+    <meta name="keywords" content="NGO, support, awareness, community, volunteer, donate">
     <meta name="author" content="Phoebe & Partners">
-    <title>Our Programmes - Phoebe & Partners</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Phoebe & Partners - Programmes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { overflow-x: hidden; }
-        header { background: #004085; color: white; padding: 1rem; text-align: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
-        nav ul li a { color: white; text-decoration: none; padding: 10px; display: block; }
-        .container { max-width: 1200px; margin: 100px auto 0; padding: 20px; }
-        .programme { padding: 50px 20px; text-align: left; margin-bottom: 20px; margin-top: 20px; border-radius: 10px; color: white; position: relative; }
-        .programme h2 { font-size: 2rem; animation: fadeIn 2s ease-in-out; }
-        .programme img { width: 100px; height: auto; position: absolute; top: 20px; right: 20px; border-radius: 5px; }
-        .footer { background: #222; color: white; padding: 30px; text-align: center; }
-        .footer a { color: #ddd; text-decoration: none; margin: 0 10px; }
-        
-        /* Colors for each section */
-        .edu-support { background: #f39c12; }
-        .healthcare { background: #16a085; }
-        .youth-empowerment { background: #2980b9; }
-        .women-empowerment { background: #8e44ad; }
-        .sustainability { background: #27ae60; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
+        body {
+            background: #f4f4f9;
+            text-align: center;
+            padding-top: 180px; /* Space for logo and header */
+        }
+        /* Fixed Logo with Background */
+        .logo-container {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 130px;
+            width: 100%;
+            background: #fff;
+            z-index: 1001;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .logo-frame {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 6px solid #007BFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotateRing 4s linear infinite;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: url('logo.jpeg') no-repeat center/cover;
+        }
+        @keyframes rotateRing {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        /* Fixed Header */
+        .header {
+            position: fixed;
+            top: 130px; /* Below logo */
+            width: 100%;
+            background: #007BFF;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .header .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .header .nav-links li {
+            margin: 0 15px;
+        }
+        .header .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .header .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        /* Mobile Menu */
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .header .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #007BFF;
+                position: absolute;
+                top: 50px;
+                width: 100%;
+                left: 0;
+                padding: 10px 0;
+            }
+            .header .nav-links.active {
+                display: flex;
+            }
+            .header .nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+        /* Sections */
+        .section {
+            background: white;
+            margin: 20px auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin-bottom: 15px;
+            color: #007BFF;
+        }
+        .section p {
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Slideshow */
+        .slideshow {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .slideshow img {
+            width: 100%;
+            border-radius: 10px;
+            display: none;
+        }
+        .slideshow img.active {
+            display: block;
+        }
+.footer {
+    background: linear-gradient(to right, #004085, #0056b3); /* Smooth gradient */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px; /* Space between footer and other content */
+}
+
+.footer:hover {
+    background: linear-gradient(to right, #a93226, #7b241c); /* Reverse gradient on hover */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    opacity: 0.7; /* Subtle hover effect while keeping text white */
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white; /* Ensuring all text remains white */
+    opacity: 0.9;
+}
+        .whatsapp-icon { position: fixed; bottom: 20px; right: 20px; }
+        .whatsapp-icon img { width: 50px; height: 50px; }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#edu-support">Education Support</a></li>
-                <li><a href="#healthcare">Healthcare Access</a></li>
-                <li><a href="#youth-empowerment">Youth</a></li>
-                <li><a href="#women-empowerment">Women</a></li>
-                <li><a href="#sustainability">Sustainability</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div class="container">
-        <section id="edu-support" class="programme edu-support">
-            <h2>Education Support Programme</h2>
-            <p>Providing learning materials, scholarships, and mentorship for underprivileged children.</p>
-        </section>
-        
-        <section id="healthcare" class="programme healthcare">
-            <h2>Healthcare Access Programme</h2>
-            <p>Offering free medical check-ups, health awareness campaigns, and access to essential medicines.</p>
-        </section>
-        
-        <section id="youth-empowerment" class="programme youth-empowerment">
-            <h2>Youth Empowerment Programme</h2>
-            <p>Providing vocational training, career guidance, and entrepreneurship opportunities for young people.</p>
-        </section>
-        
-        <section id="women-empowerment" class="programme women-empowerment">
-            <h2>Women Empowerment Initiative</h2>
-            <p>Encouraging economic independence for women through skill acquisition and financial literacy.</p>
-        </section>
-        
-        <section id="sustainability" class="programme sustainability">
-            <h2>Sustainability and Community Development</h2>
-            <p>Promoting environmental sustainability and self-sufficient community projects.</p>
-        </section>
+
+    <!-- Fixed Rotating Logo -->
+    <div class="logo-container">
+        <div class="logo-frame">
+            <div class="logo"></div>
+        </div>
     </div>
+
+    <!-- Fixed Header with Navigation -->
+    <header class="header">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+                <li><a href="index3.html">HOME</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="testimonies.html">Testimonies</a></li>
+                <li><a href="stories.html">Our Stories</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Content Sections with Slideshows -->
+    <section class="section">
+        <h2>Upcoming Events - PROJECT PAD 4,000 GIRLS </h2>
+        <p>Project Pad aims to empower 4,000 teenage girls, underprivileged women, and girls/women with disabilities by providing menstrual health management solutions, promoting inclusiveness, and breaking social stigmas surrounding menstruation. - Sponsor 1 girl: ₦2,500 - Sponsor 10 girls: ₦25,000. Your support will provide sanitary pads and menstrual health education to girls in need, promoting dignity, confidence, and educational opportunities!
+.</p>
+    </section>
+    <div class="slideshow">
+        <img src="education1.jpeg" class="active">
+    </div>
+
+    <section class="section">
+        <h2>Phoebe’s & Partners Street Feeding – 1/1/2025</h2>
+        <p>We started the New Year with a heartfelt mission! On January 1st, Phoebe’s Foundation provided warm meals to over 100 individuals on the streets of Suleja, offering not just nourishment but also hope to those in need. This outreach reflects our unwavering dedication to uplifting the community and making a meaningful difference in the lives of vulnerable individuals. We are deeply grateful for the opportunity to serve and remain committed to spreading love, kindness, and support to those who need it most.</p>
+    </section>
+    <div class="slideshow" id="slideshow1">
+        <img src="image1.jpg" class="active">
+        <img src="image2.jpg">
+        <img src="image3.jpg">
+        <img src="image4.jpg">
+        <img src="image5.jpg">
+    </div>
+
+    <section class="section">
+        <h2>Visit a Hospital Project – December 20, 2024</h2>
+        <p>On December 20th, our team visited Suleja General Hospital, Niger State, bringing comfort and care to patients and their families. This heartfelt initiative touched many lives, filling the hospital with joy, hope, and a renewed sense of relief. Our goal was to offer not just support but also compassion to those facing medical challenges. Seeing the smiles, tears of gratitude, and heartfelt appreciation from patients and their loved ones was truly humbling. This experience reaffirmed the power of community outreach and the impact we can make in the lives of others. We remain dedicated to continuing such initiatives, spreading love, kindness, and unwavering support to those who need it most.</p>
+    </section>
+    <div class="slideshow" id="slideshow2">
+        <img src="image1.jpg" class="active">
+        <img src="image2.jpg">
+        <img src="image3.jpg">
+        <img src="image4.jpg">
+        <img src="image5.jpg">
+    </div>
+
+    <section class="section">
+        <h2>Visit to Destiny Orphanage Home – November 27, 2024</h2>
+        <p>On November 27th, our team had the heartfelt opportunity to visit Destiny Orphanage Home, spending a meaningful day with the children. We arrived with gifts and essential supplies, aiming to bring joy and brighten their day. Throughout our visit, we engaged in fun activities, shared laughter, and created lasting connections with the kids. Seeing the excitement and gratitude in their eyes was truly touching. Beyond the joy, we also took the time to learn about the orphanage’s mission, the challenges they face, and the incredible work they do to provide a loving and supportive environment for these children. As we left, we were deeply inspired by the resilience and hope that radiated from the children. This visit reinforced our commitment to giving back and making a meaningful difference in our community.</p>
+    </section>
+    <div class="slideshow" id="slideshow3">
+        <img src="image1.jpg" class="active">
+        <img src="image2.jpg">
+        <img src="image3.jpg">
+        <img src="image4.jpg">
+        <img src="image5.jpg">
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+        function startSlideshow(slideshowId) {
+            let index = 0;
+            const images = document.querySelectorAll(`#${slideshowId} img`);
+            setInterval(() => {
+                images.forEach(img => img.classList.remove("active"));
+                images[index].classList.add("active");
+                index = (index + 1) % images.length;
+            }, 5000);
+        }
+        window.onload = function() {
+            startSlideshow("slideshow1");
+            startSlideshow("slideshow2");
+            startSlideshow("slideshow3");
+        };
+    </script>
+<footer class="footer">
+    <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
+    <nav>
+        <a href="programmes.html">Programmes</a> |
+        <a href="get-involved.html">Get Involved</a> |
+        <a href="testimonies.html">Testimonies</a> |
+        <a href="success-stories.html">Success Stories</a> |
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a> <!-- Corrected Email Icon -->
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a> |
+        <a href="partners.html">Partners</a>
+    </nav>
+</footer>
+
     
-    <footer class="footer">
-        <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
-        <nav>
-            <a href="programmes.html">Programmes</a> |
-            <a href="get-involved.html">Get Involved</a> |
-            <a href="testimonies.html">Testimonies</a> |
-            <a href="success-stories.html">Success Stories</a> |
-            <a href="#"><img src="facebook.png" alt="Facebook" width="20"></a>
-            <a href="#"><img src="email.png" alt="Email" width="20"></a>
-            <a href="#"><img src="instagram.png" alt="Instagram" width="20"></a>
-            <a href="#"><img src="twitter.png" alt="Twitter" width="20"></a> |
-            <a href="partners.html">Partners</a>
-        </nav>
-    </footer>
+    <a href="https://wa.me/2348102341648" class="whatsapp-icon">
+        <img src="whatsapp2.png" alt="WhatsApp">
+    </a>
 </body>
 </html>
+
