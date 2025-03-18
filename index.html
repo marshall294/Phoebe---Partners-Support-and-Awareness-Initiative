@@ -8,28 +8,199 @@
     <meta name="author" content="Phoebe & Partners">
     <title>Phoebe & Partners - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script defer src="script.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { overflow-x: hidden; }
-        header { background: #004085; color: white; padding: 1rem; text-align: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
-        nav ul li a { color: white; text-decoration: none; padding: 10px; display: block; }
+        /* LOGO CONTAINER */
+        .logo-container {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            z-index: 1100;
+        }
+
+        .logo-frame {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 6px solid transparent;
+            border-top: 6px solid #a93226;
+            border-bottom: 6px solid #004085;
+            animation: rotateRing 3s infinite linear;
+        }
+
+        @keyframes rotateRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo-frame::before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 4px solid transparent;
+            border-top: 4px solid #4CAF50;
+            border-bottom: 4px solid #ffcc00;
+            border-radius: 50%;
+            top: 25%;
+            left: 25%;
+            animation: rotateRing 2s infinite reverse linear;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        /* HEADER AND NAV */
+        header {
+            background: #004085;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding-top: 120px;
+        }
+
+        nav { position: relative; }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            transition: max-height 0.5s ease-in-out;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        /* COLLAPSIBLE MENU */
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                background: #004085;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-active {
+                max-height: 300px;
+            }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px;
+            }
+        }
         .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
         .section { padding: 50px 20px; text-align: center; position: relative; background: #f9f9f9; }
-        .footer { background: #a93226; color: white; padding: 30px; text-align: center; }
-        .footer a { color: #ddd; text-decoration: none; margin: 0 10px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { overflow-x: hidden; text-align: center; }
+.footer {
+    background: linear-gradient(to right, #004085, #0056b3); /* Smooth gradient */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px; /* Space between footer and other content */
+}
+
+.footer:hover {
+    background: linear-gradient(to right, #a93226, #7b241c); /* Reverse gradient on hover */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    opacity: 0.7; /* Subtle hover effect while keeping text white */
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white; /* Ensuring all text remains white */
+    opacity: 0.9;
+}
+
+
         .section img, .section video { max-width: 100%; height: auto; display: block; margin: 20px auto; }
-        .stats { display: flex; justify-content: center; gap: 50px; font-size: 1.5rem; font-weight: bold; padding: 50px; background: #eee; animation: fadeInUp 2s ease-in-out; }
-        .stats div { opacity: 0; animation: countUp 3s ease-in-out forwards; }
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    padding: 50px;
+    background: #eee;
+    text-align: center;
+}
+
+.stat {
+    font-size: 1.5rem;
+    color: #a93226;
+}
+
         .whatsapp-icon { position: fixed; bottom: 20px; right: 20px; }
         .whatsapp-icon img { width: 50px; height: 50px; }
     </style>
 </head>
-<body>
+    <!-- LOGO WITH 3D ROTATING FRAME -->
+    <div class="logo-container">
+        <div class="logo-frame"></div>
+        <img src="logo.jpeg" alt="Logo" class="logo">
+    </div>
+
     <header>
         <nav>
-            <ul>
+            <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+            <ul id="navMenu">
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="programmes.html">Programmes</a></li>
                 <li><a href="get-involved.html">Get Involved</a></li>
@@ -45,17 +216,16 @@
         <h1>Welcome to Phoebe & Partners Support and Awareness Initiative</h1>
     </section>
     
-    <section class="stats">
-        <div>180,000+<br>Secondary Schools Visited</div>
-        <div>113+<br>Active Volunteers</div>
-        <div>4,836+<br>States In Nigeria</div>
-        <div>30+<br>Projects Completed</div>
-    </section>
+<section class="stats">
+    <div><span class="stat" data-target="180000">0</span>+<br>Schools Visited</div>
+    <div><span class="stat" data-target="113">0</span>+<br>Active Volunteers</div>
+    <div><span class="stat" data-target="30">0</span>+<br>Projects Completed</div>
+</section>
     
 <div class="container">
 <section class="section">
-    <h2>Who We Are</h2>
-    <p>We are dedicated to creating awareness and providing support to communities in need.</p>
+<h2>IMPACT AND REACH</h2>
+<p>Phoebe Support & Awareness Initiative is committed to reach thousands of individuals across communities, contributing to improved health outcomes, enhanced educational opportunities, and sustainable livelihoods for underprivileged groups.</p>
     <img id="whoWeAreImage" src="image1.jpg" alt="About Us" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 10px auto;">
     <button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" 
         onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" 
@@ -77,38 +247,57 @@
         setInterval(changeWhoWeAreImage, 10000);
     </script>
 </section>
+</div>
+    <div class="container">
+        <div class="box">
+            <h2>VISION</h2>
+            <p>To create a society where every individual, regardless of background, enjoys physical, social, and mental well-being, and has equal access to education, health care, and opportunities for growth.</p>
+        </div>
 
-    <section class="section"><h2>Our Programmes</h2><p>We run diverse programmes aimed at improving education, health, and social welfare.</p><video controls><source src="programmes.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Get Involved</h2><p>Join us in making a difference by volunteering or donating.</p><img src="hero.png" alt="Get Involved"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Testimonies</h2><p>Hear from individuals and communities we've impacted.</p><video controls><source src="testimonies.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Our Stories</h2><p>Read inspiring stories of transformation and resilience.</p><img src="hero.png" alt="Our Stories"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Reports</h2><p>Access our research, reports, and transparency documents.</p><video controls><source src="reports.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
+        <div class="box">
+            <h2>MISSION</h2>
+            <p>Phoebe Support & Awareness Initiative is dedicated to promoting the welfare and development of underserved communities through comprehensive health awareness, humanitarian aid, education support, and youth empowerment initiatives.</p>
+        </div>
+
+        <div class="box">
+            <h2>GOAL</h2>
+            <p>Our goal is to have IMPACT IN LIVES by providing high-impact oriented, cost-effective, & culturally competent capacity-building programs to people globally, especially in Nigeria, particularly youths, widows, disabled individuals, and children of school-going age.</p>
+        </div>
+    </div>
+</section>
+
+    <section class="section"><h2>Our Programmes</h2><p>To raise awareness, understanding and knowledge on Hepatitis  and other health issues  among the community for a healthy society/community.</p><video controls><source src="video.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
+    <section class="section"><h2>Upcoming Events</h2><p>Pad a girl today.</p><img src="education1.jpeg" alt="Get Involved"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
+    <section class="section"><h2>Testimonies</h2><p>To eliminate gender inequalities in primary and secondary education by achieving equality in education, with ensuring girl’s full and equal access to basic education of good quality.</p><video controls><source src="video.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
+    <section class="section"><h2>Our Stories</h2><p>To improve the environmental condition for nomads and rural people.</p><img src="hero.png" alt="Our Stories"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
+    <section class="section"><h2>Reports</h2><p>Access our research, reports, and transparency documents.</p><video controls><source src="video.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
     <section class="section"><h2>Our Partners</h2><p>Meet the organizations that support our mission.</p><img src="hero.png" alt="Our Partners"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Upcoming Events</h2><p>Stay informed about our latest events and activities.</p><video controls><source src="events.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
+    <section class="section"><h2>Get Involved</h2><p>Stay informed about our latest events and activities.</p><video controls><source src="video.mp4" type="video/mp4"></video><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
     <section class="section"><h2>Success Stories</h2><p>Stories of those who have benefited from our initiatives.</p><img src="hero.png" alt="Success Stories"><button style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">Explore More</button></section>
-    <section class="section"><h2>Career Opportunities</h2><p>Explore job opportunities with us.</p><video controls><source src="careers.mp4" type="video/mp4"></video><button onclick="window.location.href='#'" style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" 
+    <section class="section"><h2>Career Opportunities</h2><p>Explore job opportunities with us.</p><video controls><source src="video.mp4" type="video/mp4"></video><button onclick="window.location.href='#'" style="background: linear-gradient(to bottom, #4CAF50, #2E7D32); color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px #1B5E20; transition: all 0.2s; margin-top: 10px;" 
     onmousedown="this.style.boxShadow='0 2px #1B5E20'; this.style.transform='translateY(2px)'" 
     onmouseup="this.style.boxShadow='0 4px #1B5E20'; this.style.transform='translateY(0)'">
     Explore More
 </button>
 
 </div>
-
     
-    <footer class="footer">
-        <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
-        <nav>
-            <a href="programmes.html">Programmes</a> |
-            <a href="get-involved.html">Get Involved</a> |
-            <a href="testimonies.html">Testimonies</a> |
-            <a href="success-stories.html">Success Stories</a> |
-            <a href="#"><img src="facebook.png" alt="Facebook" width="20"></a>
-            <a href="#"><img src="email.jpg" alt="Email" width="20"></a>
-            <a href="#"><img src="instagram.jfif" alt="Instagram" width="20"></a>
-            <a href="#"><img src="twitter.png" alt="Twitter" width="20"></a> |
-            <a href="partners.html">Partners</a>
-        </nav>
-    </footer>
+<footer class="footer">
+    <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
+    <nav>
+        <a href="programmes.html">Programmes</a> |
+        <a href="get-involved.html">Get Involved</a> |
+        <a href="testimonies.html">Testimonies</a> |
+        <a href="success-stories.html">Success Stories</a> |
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a> <!-- Corrected Email Icon -->
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a> |
+        <a href="partners.html">Partners</a>
+    </nav>
+</footer>
+
     
     <a href="https://wa.me/2348102341648" class="whatsapp-icon">
         <img src="whatsapp2.png" alt="WhatsApp">
