@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Phoebe & Partners Support and Awareness Initiative - Empowering communities through support and awareness programs.">
+    <meta name="keywords" content="NGO, support, awareness, community, volunteer, donate">
+    <meta name="author" content="Phoebe & Partners">
     <title>Get Involved - Phoebe Support & Awareness Initiative</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -11,14 +14,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
         }
         body {
             background: #f4f4f9;
             text-align: center;
-            padding-top: 200px;
-            line-height: 1.8;
+            padding-top: 180px; /* Space for logo and header */
         }
+        /* Fixed Logo with Background */
         .logo-container {
             position: fixed;
             top: 0;
@@ -50,36 +53,72 @@
             background: url('logo.jpeg') no-repeat center/cover;
         }
         @keyframes rotateRing {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
+        /* Fixed Header */
         .header {
             position: fixed;
-            top: 130px;
+            top: 130px; /* Below logo */
             width: 100%;
             background: #007BFF;
-            padding: 15px 0;
+            padding: 12px 20px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             z-index: 1000;
         }
         .header .nav-links {
             display: flex;
             list-style: none;
-            gap: 20px;
+        }
+        .header .nav-links li {
+            margin: 0 15px;
         }
         .header .nav-links a {
             text-decoration: none;
             color: white;
             font-weight: bold;
-            padding: 10px 18px;
-            border-radius: 6px;
-            transition: background 0.3s ease, transform 0.2s;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
         .header .nav-links a:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
+        }
+        /* Mobile Menu */
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .header .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #007BFF;
+                position: absolute;
+                top: 50px;
+                width: 100%;
+                left: 0;
+                padding: 10px 0;
+            }
+            .header .nav-links.active {
+                display: flex;
+            }
+            .header .nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+            .menu-icon {
+                display: block;
+            }
         }
         .content {
             max-width: 800px;
@@ -116,74 +155,76 @@
             background: #0056b3;
             transform: translateY(-3px);
         }
-        footer {
-            background: url('hero.png') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 50px;
-        }
-        .footer nav {
-            margin-top: 20px;
-        }
-        .footer a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer a:hover {
-            color: #FFD700;
-        }
-        .whatsapp-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
-        .whatsapp-icon img {
-            width: 55px;
-            height: 55px;
-        }
-        @media (max-width: 768px) {
-            .header .nav-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            .content {
-                padding: 30px;
-            }
-            .content h1 {
-                font-size: 28px;
-            }
-            .content p {
-                font-size: 16px;
-            }
-        }
+.footer {
+    background: linear-gradient(to right, #004085, #0056b3); /* Smooth gradient */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px; /* Space between footer and other content */
+}
+
+.footer:hover {
+    background: linear-gradient(to right, #a93226, #7b241c); /* Reverse gradient on hover */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    opacity: 0.7; /* Subtle hover effect while keeping text white */
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white; /* Ensuring all text remains white */
+    opacity: 0.9;
+}
+        .whatsapp-icon { position: fixed; bottom: 20px; right: 20px; }
+        .whatsapp-icon img { width: 50px; height: 50px; }
     </style>
 </head>
 <body>
 
+    <!-- Fixed Rotating Logo -->
     <div class="logo-container">
         <div class="logo-frame">
             <div class="logo"></div>
         </div>
     </div>
 
+    <!-- Fixed Header with Navigation -->
     <header class="header">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="get-involved.html">Get Involved</a></li>
-            <li><a href="testimonies.html">Testimonies</a></li>
-            <li><a href="stories.html">Our Stories</a></li>
-            <li><a href="reports.html">Reports</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="index3.html">HOME</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="testimonies.html">Testimonies</a></li>
+                <li><a href="stories.html">Our Stories</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </header>
-    
+
+    <div class="content">
+        <h1>GET INVOLVED</h1>
+<p><strong>Welcome to Phoebe & Partners Support and Awareness Initiative Portal:</strong> We invite you to engage in our wide range of programs and activities. With numerous events to support, you can donate, encourage, and make a meaningful contribution. We also value input from stakeholders and welcome suggestions to help us achieve our goals.
+On this portal, you can easily sign up for volunteer opportunities by clicking the button below, which will direct you to the sign-up page. <strong>To donate to any of our programs or events,</strong> simply select the designated donate button, which will take you to the payment page. Donations can be made as one-time contributions or set up as recurring payments.
+
+Additionally, we offer career opportunities, and Phoebe’s & Partners is committed to supporting career development.
+
+If you're unsure about the available programs or need more detailed information, feel free to explore the descriptions of each program on the portal.</p>
     <div class="content">
         <h1>Upcoming Event: Project Pad 4,000 Girls</h1>
         <p>Empowering 4,000 teenage girls, underprivileged women, and those with disabilities through menstrual health management solutions. Breaking stigmas, promoting dignity!</p>
@@ -199,7 +240,7 @@
         
         <div class="cta-buttons">
             <a href="#">Sign Up for Volunteering</a>
-            <a href="#">Donate</a>
+            <a href="donate.html">Donate</a>
             <a href="#">Volunteer Availability</a>
             <a href="#">Careers</a>
         </div>
@@ -234,5 +275,10 @@
     <a href="https://wa.me/2349166093756" class="whatsapp-icon">
         <img src="whatsapp2.png" alt="WhatsApp">
     </a>
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
