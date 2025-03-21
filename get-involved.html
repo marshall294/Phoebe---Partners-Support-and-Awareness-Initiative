@@ -190,6 +190,34 @@
     color: white; /* Ensuring all text remains white */
     opacity: 0.9;
 }
+        /* Button Styling */
+        .donate-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 0 #c41c00;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* 3D Effect */
+        .donate-btn:active {
+            transform: translateY(5px);
+            box-shadow: 0 2px 0 #c41c00;
+        }
+
+        /* Hover Effect */
+        .donate-btn:hover {
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+        }
         .whatsapp-icon { position: fixed; bottom: 20px; right: 20px; }
         .whatsapp-icon img { width: 50px; height: 50px; }
     </style>
@@ -207,9 +235,9 @@
     <header class="header">
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
-                <li><a href="index3.html">HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
                 <li><a href="testimonies.html">Testimonies</a></li>
                 <li><a href="stories.html">Our Stories</a></li>
                 <li><a href="reports.html">Reports</a></li>
@@ -270,7 +298,10 @@ If you're unsure about the available programs or need more detailed information,
     </nav>
 </footer>
 
-
+    <!-- Donate Button -->
+    <a href="donate.html" target="_blank" class="donate-btn">
+        Donate Now
+    </a>
     
     <a href="https://wa.me/2349166093756" class="whatsapp-icon">
         <img src="whatsapp2.png" alt="WhatsApp">
