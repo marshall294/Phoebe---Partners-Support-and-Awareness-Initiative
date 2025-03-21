@@ -74,30 +74,71 @@
             border-radius: 10px;
         }
 
-        /* Footer */
-        .footer {
-            background: #222; color: white; padding: 30px;
-            text-align: center; margin-top: 40px;
-        }
-        .footer a {
-            color: #ddd; text-decoration: none; margin: 0 10px;
+.footer {
+    background: linear-gradient(to right, #004085, #0056b3); /* Smooth gradient */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px; /* Space between footer and other content */
+}
+
+.footer:hover {
+    background: linear-gradient(to right, #a93226, #7b241c); /* Reverse gradient on hover */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    opacity: 0.7; /* Subtle hover effect while keeping text white */
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white; /* Ensuring all text remains white */
+    opacity: 0.9;
+}
+        /* Button Styling */
+        .donate-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 0 #c41c00;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .video-box {
-                flex: 1 1 calc(50% - 20px); /* 2 per row on tablets */
-            }
+        /* 3D Effect */
+        .donate-btn:active {
+            transform: translateY(5px);
+            box-shadow: 0 2px 0 #c41c00;
         }
-        @media (max-width: 480px) {
-            .hero, .video-hero {
-                height: 60vh;
-                font-size: 1.5rem;
-            }
-            .video-box {
-                flex: 1 1 100%; /* 1 per row on small screens */
-            }
+
+        /* Hover Effect */
+        .donate-btn:hover {
+            background: linear-gradient(45deg, #ff9800, #ff5722);
         }
+        .whatsapp-icon { position: fixed; bottom: 20px; right: 20px; }
+        .whatsapp-icon img { width: 50px; height: 50px; }
     </style>
 </head>
 <body>
@@ -116,18 +157,10 @@
     <!-- Hero Section with Image -->
     <section class="hero">
         <div class="overlay"></div>
-        <img src="https://www.who.int/images/default-source/health-and-climate-change/4-sea-level-rise-flooding-chennai-india-who-shanth-kumar-(1).jpg?sfvrsn=99d2f39e_4" alt="Testimony Image">
+        <img src="pictures/testimonies.jpg?sfvrsn=99d2f39e_4" alt="Testimony Image">
         <h1>Real Stories of Change</h1>
     </section>
 
-    <!-- Hero Section with Video Background -->
-    <section class="video-hero">
-        <div class="overlay"></div>
-        <video autoplay muted loop>
-            <source src="testimony-video.mp4" type="video/mp4">
-        </video>
-        <h1>Transforming Lives Every Day</h1>
-    </section>
 
     <!-- Testimonies Section -->
     <div class="container">
@@ -165,19 +198,38 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
-        <nav>
-            <a href="programmes.html">Programmes</a> |
-            <a href="get-involved.html">Get Involved</a> |
-            <a href="testimonies.html">Testimonies</a> |
-            <a href="success-stories.html">Success Stories</a> |
-            <a href="#">Facebook</a> |
-            <a href="#">Instagram</a> |
-            <a href="#">Twitter</a> |
-            <a href="partners.html">Partners</a>
-        </nav>
-    </footer>
+<footer class="footer">
+    <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
+    
+    <p>
+        Address: Flat B2, Block B, Plot 518, Michael Okpara Street, 
+        Sky Memorial Complex, Wuse Zone 5, Abuja – Nigeria. <br>
+        Email: <a href="mailto:ppawarenessinitiative@gmail.com">ppawarenessinitiative@gmail.com</a> <br>
+        WhatsApp Contact: <a href="https://wa.me/2349166093756" target="_blank">+234 (0) 9166093756</a>
+    </p>
+
+    <nav>
+        <a href="programmes.html">Programmes</a> |
+        <a href="get-involved.html">Get Involved</a> |
+        <a href="testimonies.html">Testimonies</a> |
+        <a href="success-stories.html">Success Stories</a> |
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:ppawarenessinitiative@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a> |
+        <a href="partners.html">Partners</a>
+    </nav>
+</footer>
+
+    <!-- Donate Button -->
+    <a href="donate.html" target="_blank" class="donate-btn">
+        Donate Now
+    </a>
+    
+    <a href="https://wa.me/2349166093756" class="whatsapp-icon">
+        <img src="whatsapp2.png" alt="WhatsApp">
+    </a>
 </body>
 </html>
+
