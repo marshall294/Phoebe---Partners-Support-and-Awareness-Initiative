@@ -187,6 +187,34 @@
     color: white; /* Ensuring all text remains white */
     opacity: 0.9;
 }
+        /* Button Styling */
+        .donate-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 0 #c41c00;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* 3D Effect */
+        .donate-btn:active {
+            transform: translateY(5px);
+            box-shadow: 0 2px 0 #c41c00;
+        }
+
+        /* Hover Effect */
+        .donate-btn:hover {
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+        }
         .whatsapp-icon { position: fixed; bottom: 20px; right: 20px; }
         .whatsapp-icon img { width: 50px; height: 50px; }
     </style>
@@ -204,7 +232,7 @@
     <header class="header">
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="index3.html">HOME</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="get-involved.html">Get Involved</a></li>
                 <li><a href="testimonies.html">Testimonies</a></li>
@@ -229,11 +257,11 @@
         <p>We started the New Year with a heartfelt mission! On January 1st, Phoebe’s Foundation provided warm meals to over 100 individuals on the streets of Suleja, offering not just nourishment but also hope to those in need. This outreach reflects our unwavering dedication to uplifting the community and making a meaningful difference in the lives of vulnerable individuals. We are deeply grateful for the opportunity to serve and remain committed to spreading love, kindness, and support to those who need it most.</p>
     </section>
     <div class="slideshow" id="slideshow1">
-        <img src="image1.jpg" class="active">
-        <img src="image2.jpg">
-        <img src="image3.jpg">
-        <img src="image4.jpg">
-        <img src="image5.jpg">
+        <img src="pictures/WhatsApp Image 2025-03-20 at 15.18.41_800ce892.jpg" class="active">
+        <img src="pictures/WhatsApp Image 2025-03-20 at 15.18.51_824e66f0.jpg">
+        <img src="pictures/WhatsApp Image 2025-03-20 at 15.18.55_a6644d51.jpg">
+        <img src="pictures/WhatsApp Image 2025-03-20 at 15.18.58_4ee375e5.jpg">
+        <img src="pictures/WhatsApp Image 2025-03-20 at 15.18.59 (1).jpg">
     </div>
 
     <section class="section">
@@ -303,11 +331,13 @@
     </nav>
 </footer>
 
-
+    <!-- Donate Button -->
+    <a href="donate.html" target="_blank" class="donate-btn">
+        Donate Now
+    </a>
     
     <a href="https://wa.me/2349166093756" class="whatsapp-icon">
         <img src="whatsapp2.png" alt="WhatsApp">
     </a>
 </body>
 </html>
-
