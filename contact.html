@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
         nav ul li { display: inline; margin: 0 15px; }
         nav ul li a { color: white; text-decoration: none; }
         .hero {
-            background: url('image4.jpg') center/cover no-repeat;
+            background: url('pictures/pheobe (30).jpeg') center/cover no-repeat;
             height: 60vh;
             display: flex;
             align-items: center;
@@ -59,8 +60,6 @@
             width: 100%;
         }
     </style>
-    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 </head>
 <body>
     <header>
@@ -100,35 +99,38 @@
         <p>&copy; 2025 Phoebe & Partners Support and Awareness Initiative. All rights reserved.</p>
     </footer>
     
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-const firebaseConfig = {
-  apiKey: "AIzaSyCXveIGWuc54YU9sM6PXDAfx2WPKA6dopg",
-  authDomain: "year5s.firebaseapp.com",
-  databaseURL: "https://year5s-default-rtdb.firebaseio.com",
-  projectId: "year5s",
-  storageBucket: "year5s.firebasestorage.app",
-  messagingSenderId: "981035217689",
-  appId: "1:981035217689:web:42c67b9b0d021e429bcb88"
-};
-        
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
+        // Initialize EmailJS
+        emailjs.init("your_user_id");  // Replace with your EmailJS user ID
 
+        // Handle form submission
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
-            db.collection('messages').add({
-                name, email, subject, message,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            }).then(() => {
-                document.getElementById('feedback').style.display = 'block';
-                document.getElementById('contactForm').reset();
-            }).catch(error => console.error('Error adding message:', error));
+
+            // Create an object to pass the form values
+            const formData = {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            };
+
+            // Send email using EmailJS
+            emailjs.send("your_service_id", "your_template_id", formData)
+                .then(function(response) {
+                    console.log('Message sent successfully', response);
+                    document.getElementById('feedback').style.display = 'block';
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    console.error('Error sending message', error);
+                });
         });
     </script>
 </body>
