@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,121 +8,148 @@
     <meta name="keywords" content="NGO, support, awareness, community, volunteer, donate">
     <meta name="author" content="Phoebe & Partners">
     <title>Get Involved - Phoebe Support & Awareness Initiative</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background: #f4f4f9;
-            text-align: center;
-            padding-top: 180px; /* Space for logo and header */
-        }
-        /* Fixed Logo with Background */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { overflow-x: hidden; text-align: center; }
+        /* LOGO CONTAINER */
         .logo-container {
             position: fixed;
-            top: 0;
+            top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 130px;
-            width: 100%;
-            background: #fff;
-            z-index: 1001;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            width: 100px;
+            height: 100px;
+            z-index: 1100;
         }
+
         .logo-frame {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            border: 6px solid #007BFF;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: rotateRing 4s linear infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 6px solid transparent;
+            border-top: 6px solid #a93226;
+            border-bottom: 6px solid #004085;
+            animation: rotateRing 3s infinite linear;
         }
+
+        @keyframes rotateRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo-frame::before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 4px solid transparent;
+            border-top: 4px solid #4CAF50;
+            border-bottom: 4px solid #ffcc00;
+            border-radius: 50%;
+            top: 25%;
+            left: 25%;
+            animation: rotateRing 2s infinite reverse linear;
+        }
+
         .logo {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: url('logo.jpeg') no-repeat center/cover;
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
-        @keyframes rotateRing {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        /* Fixed Header */
-        .header {
-            position: fixed;
-            top: 130px; /* Below logo */
-            width: 100%;
-            background: #007BFF;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-        .header .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        .header .nav-links li {
-            margin: 0 15px;
-        }
-        .header .nav-links a {
-            text-decoration: none;
+
+        /* HEADER AND NAV */
+        header {
+            background: #004085;
             color: white;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding-top: 120px;
         }
-        .header .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
+
+        nav { position: relative; }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            transition: max-height 0.5s ease-in-out;
         }
-        /* Mobile Menu */
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        /* COLLAPSIBLE MENU */
         .menu-icon {
             display: none;
-            font-size: 26px;
-            color: white;
+            font-size: 30px;
+            color: blue;
             cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
         }
-        @media (max-width: 768px) {
-            .header .nav-links {
-                display: none;
+
+        @media screen and (max-width: 768px) {
+            nav ul {
                 flex-direction: column;
-                background: #007BFF;
+                gap: 0;
+                background: #004085;
                 position: absolute;
                 top: 50px;
-                width: 100%;
                 left: 0;
-                padding: 10px 0;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
             }
-            .header .nav-links.active {
-                display: flex;
-            }
-            .header .nav-links li {
-                text-align: center;
-                margin: 10px 0;
-            }
+
             .menu-icon {
                 display: block;
             }
+
+            .nav-active {
+                max-height: 300px;
+            }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px;
+            }
+        }
+        .content1 {
+            max-width: 100%;
+            margin: auto;
+            margin-top: 200px;
+            padding: 50px 20px;
+        }
+        .content1 h1 {
+            color: #007bff;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .content1 p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
         }
         .content {
-            max-width: 800px;
+            max-width: 100%;
             margin: auto;
             padding: 50px 20px;
         }
@@ -221,34 +249,36 @@
         .whatsapp-icon { position: fixed; bottom: 20px; right: 20px; }
         .whatsapp-icon img { width: 50px; height: 50px; }
     </style>
-</head>
-<body>
-
-    <!-- Fixed Rotating Logo -->
-    <div class="logo-container">
-        <div class="logo-frame">
-            <div class="logo"></div>
+<header>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo-frame"></div>
+            <img src="logo.jpeg" alt="Logo" class="logo">
         </div>
+        
+        <!-- Page Title -->
+        <h1 style="color: white; font-size: 20px; margin: 0;">Phoebe & Partners - Get Involved</h1>
     </div>
 
-    <!-- Fixed Header with Navigation -->
-    <header class="header">
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="programmes.html">Programmes</a></li>
-                <li><a href="testimonies.html">Testimonies</a></li>
-                <li><a href="stories.html">Our Stories</a></li>
-                <li><a href="reports.html">Reports</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul id="navMenu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="testimonies.html">Testimonies</a></li>
+            <li><a href="stories.html">Our Stories</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
-    </header>
+    </nav>
+</header>
 
-    <div class="content">
-        <h1>GET INVOLVED</h1>
+    <div class="content1">
 <p><strong>Welcome to Phoebe & Partners Support and Awareness Initiative Portal:</strong> We invite you to engage in our wide range of programs and activities. With numerous events to support, you can donate, encourage, and make a meaningful contribution. We also value input from stakeholders and welcome suggestions to help us achieve our goals.
-On this portal, you can easily sign up for volunteer opportunities by clicking the button below, which will direct you to the sign-up page. <strong>To donate to any of our programs or events,</strong> simply select the designated donate button, which will take you to the payment page. Donations can be made as one-time contributions or set up as recurring payments.
+On this portal, you can easily sign up for volunteer opportunities by clicking the button below, which will direct you to the sign-up page.</p> 
+<p><strong>To donate to any of our programs or events,</strong> simply select the designated donate button, which will take you to the payment page. Donations can be made as one-time contributions or set up as recurring payments.
 
 Additionally, we offer career opportunities, and Phoebe’s & Partners is committed to supporting career development.
 
@@ -289,11 +319,11 @@ If you're unsure about the available programs or need more detailed information,
         <a href="get-involved.html">Get Involved</a> |
         <a href="testimonies.html">Testimonies</a> |
         <a href="success-stories.html">Success Stories</a> |
-        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.facebook.com/share/16G4dymLmk" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="mailto:ppawarenessinitiative@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a> |
+        <a href="https://www.instagram.com/phoebesupportsawareness/?__pwa=1#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/phoebe-support-and-awareness-initiative-387036345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a> |
         <a href="partners.html">Partners</a>
     </nav>
 </footer>
