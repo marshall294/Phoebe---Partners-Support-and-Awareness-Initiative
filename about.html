@@ -11,278 +11,351 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script defer src="script.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { overflow-x: hidden; }
-        /* LOGO CONTAINER */
-        .logo-container {
-            position: fixed;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 100px;
-            z-index: 1100;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        .logo-frame {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border: 6px solid transparent;
-            border-top: 6px solid #a93226;
-            border-bottom: 6px solid #004085;
-            animation: rotateRing 3s infinite linear;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
 
-        @keyframes rotateRing {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
+/* LOGO CONTAINER */
+.logo-container {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    z-index: 1100;
+}
 
-        .logo-frame::before {
-            content: "";
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border: 4px solid transparent;
-            border-top: 4px solid #4CAF50;
-            border-bottom: 4px solid #ffcc00;
-            border-radius: 50%;
-            top: 25%;
-            left: 25%;
-            animation: rotateRing 2s infinite reverse linear;
-        }
+.logo-frame {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 6px solid transparent;
+    border-top: 6px solid #a93226;
+    border-bottom: 6px solid #004085;
+    animation: rotateRing 3s infinite linear;
+}
 
-        .logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        /* HEADER AND NAV */
-        header {
-            background: #004085;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding-top: 120px;
-        }
-
-        nav { position: relative; }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            transition: max-height 0.5s ease-in-out;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-        }
-
-        /* COLLAPSIBLE MENU */
-        .menu-icon {
-            display: none;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-
-        @media screen and (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 0;
-                background: #004085;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                width: 100%;
-                max-height: 0;
-                overflow: hidden;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-
-            .nav-active {
-                max-height: 300px;
-            }
-
-            nav ul li {
-                text-align: center;
-                padding: 10px;
-            }
-        }
-
-        .container { max-width: 1200px; margin: 100px auto 0; padding: 20px; }
-        .section { padding: 50px 20px; text-align: center; background: #f9f9f9; margin-bottom: 20px; border-radius: 10px; }
-        .section h2 { font-size: 2rem; margin-bottom: 20px; }
-        .section ul { list-style: none; text-align: left; max-width: 800px; margin: auto; }
-        .section ul li { background: #004085; color: white; padding: 10px; margin: 10px 0; border-radius: 5px; transition: transform 0.3s; }
-        .section ul li:hover { transform: scale(1.05); }
-        .fade-in { animation: fadeIn 1.5s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-    /* Album container */
-    .album { 
-        display: grid; 
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-        gap: 20px; 
-        justify-content: center; 
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
     }
-    
-    /* Card container */
-    .card { 
-        background: white; 
-        padding: 20px; 
-        border-radius: 8px; 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-        text-align: center; 
-        width: 100%;  /* Ensure card takes full width available */
-        max-width: 300px;  /* Max width for the card */
-        margin: 0 auto; /* Centers the card */
+    to {
+        transform: rotate(360deg);
     }
+}
 
-    /* Image inside the card */
-    .card img { 
-        width: 100%;  /* Image will take up the full width of the card */
-        max-width: 250px;  /* Limits image size on larger screens */
-        height: 250px;  /* Fixed height for consistency */
-        object-fit: cover; /* Ensures the image covers the entire circular frame without distortion */
-        border-radius: 50%; /* Keeps the images circular */
-        margin: 0 auto; /* Centers the image inside the container */
-        display: block; /* Ensures the image is centered */
-    }
+.logo-frame::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 4px solid transparent;
+    border-top: 4px solid #4CAF50;
+    border-bottom: 4px solid #ffcc00;
+    border-radius: 50%;
+    top: 25%;
+    left: 25%;
+    animation: rotateRing 2s infinite reverse linear;
+}
 
-    /* Responsive adjustments for small screens */
-    @media (max-width: 768px) {
-        .card img {
-            width: 150px; /* Smaller width on smaller screens */
-            height: 150px; /* Smaller height */
-        }
-    }
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 
-        .album .card:hover img {
-            transform: scale(1.1); /* Slight zoom effect on hover */
-        }
+/* HEADER AND NAV */
+header {
+    background: #004085;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding-top: 120px;
+}
 
-        .footer {
-            background: linear-gradient(to right, #004085, #0056b3); /* Smooth gradient */
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            transition: all 0.4s ease-in-out;
-            font-family: Arial, sans-serif;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 50px; /* Space between footer and other content */
-        }
+nav {
+    position: relative;
+}
 
-        .footer:hover {
-            background: linear-gradient(to right, #a93226, #7b241c); /* Reverse gradient on hover */
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    transition: max-height 0.5s ease-in-out;
+}
 
-        .footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-            font-weight: 500;
-            transition: opacity 0.3s ease-in-out;
-        }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
 
-        .footer a:hover {
-            opacity: 0.7; /* Subtle hover effect while keeping text white */
-            text-decoration: underline;
-        }
+/* COLLAPSIBLE MENU */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
 
-        .footer p {
-            margin-top: 10px;
-            font-size: 14px;
-            color: white; /* Ensuring all text remains white */
-            opacity: 0.9;
-        }
-
-        .whatsapp-icon { position: fixed; bottom: 20px; right: 20px; }
-        .whatsapp-icon img { width: 50px; height: 50px; }
-    /* Founder section */
-    #founder {
-        background: #f4f4f4;
-        padding: 50px 20px;
-        text-align: center;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
-
-    #founder h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: #004085;
-    }
-
-    .founder-container {
-        display: flex;
+@media screen and (max-width: 768px) {
+    nav ul {
         flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    .founder-frame {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        border: 6px solid #004085;
-        background-color: #f9f9f9;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .founder-img {
+        gap: 0;
+        background: #004085;
+        position: absolute;
+        top: 50px;
+        left: 0;
         width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
+        max-height: 0;
+        overflow: hidden;
     }
 
-    .founder-speech {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        color: #333;
+    .menu-icon {
+        display: block;
     }
 
-    .founder-speech h3 {
-        font-size: 1.5rem;
-        color: #004085;
-        margin-bottom: 15px;
+    .nav-active {
+        max-height: 300px;
     }
 
-    .founder-speech p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #555;
+    nav ul li {
+        text-align: center;
+        padding: 10px;
     }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 20px;
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f9f9f9;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.section ul {
+    list-style: none;
+    text-align: left;
+    max-width: 800px;
+    margin: auto;
+}
+
+.section ul li {
+    background: #004085;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.section ul li:hover {
+    transform: scale(1.05);
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Album container */
+.album {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Card container */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; /* Ensure card takes full width available */
+    max-width: 300px; /* Max width for the card */
+    margin: 0 auto; /* Centers the card */
+}
+
+/* Image inside the card */
+.card img {
+    width: 100%; /* Image will take up the full width of the card */
+    max-width: 250px; /* Limits image size on larger screens */
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the entire circular frame without distortion */
+    border-radius: 50%; /* Keeps the images circular */
+    margin: 0 auto; /* Centers the image inside the container */
+    display: block; /* Ensures the image is centered */
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    .card img {
+        width: 150px; /* Smaller width on smaller screens */
+        height: 150px; /* Smaller height */
+    }
+}
+
+.album .card:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.footer {
+    background: linear-gradient(to right, #004085, #0056b3); /* Smooth gradient */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px; /* Space between footer and other content */
+}
+
+.footer:hover {
+    background: linear-gradient(to right, #a93226, #7b241c); /* Reverse gradient on hover */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    opacity: 0.7; /* Subtle hover effect while keeping text white */
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white; /* Ensuring all text remains white */
+    opacity: 0.9;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.whatsapp-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Founder section */
+#founder {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#founder h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #004085;
+}
+
+.founder-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.founder-frame {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 6px solid #004085;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.founder-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.founder-speech {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.founder-speech h3 {
+    font-size: 1.5rem;
+    color: #004085;
+    margin-bottom: 15px;
+}
+
+.founder-speech p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
     </style>
 </head>
 <body>
