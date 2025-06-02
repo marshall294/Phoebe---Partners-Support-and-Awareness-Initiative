@@ -59,6 +59,20 @@
       margin: 3rem 0;
     }
 
+.video-block {
+  margin: 3rem auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
     video {
       width: 100%;
       max-width: 1000px;
@@ -131,7 +145,6 @@
       margin-top: 3rem;
     }
 
-    /* Fade-in animation */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -193,43 +206,50 @@
     <img src="pictures/20250527233248_IMG_1545.jpg" alt="Girls smiling with pads">
     <img src="pictures/20250528001423_IMG_1671.jpg" alt="Educational session">
     <img src="pictures/20250527234446_IMG_1590.jpg" alt="Volunteers and beneficiaries">
-    <img src="pictures/20250528010201_IMG_1688.jpg" alt="Group photo with banners">
-    <img src="pictures/20250528010555_IMG_1694.jpg" alt="Pad-making activity">
-    <img src="pictures/20250528010821_IMG_1702.jpg" alt="Student receiving pads">
-    <img src="pictures/20250528011012_IMG_1710.jpg" alt="Volunteer guidance session">
+    <img src="pictures/20250527235626_IMG_1632.jpg" alt="Group photo with banners">
+    <img src="pictures/20250528000755_IMG_1659.jpg" alt="Pad-making activity">
+    <img src="pictures/20250527234900_IMG_1604.jpg" alt="Student receiving pads">
+    <img src="pictures/20250527233445_IMG_1559.jpg" alt="Volunteer guidance session">
   </div>
 </div>
 
 <div class="video-frame fade-in">
   <h2>Watch Our Mission in Action</h2>
-  <video id="padVideo" autoplay muted loop playsinline controlsList="nodownload">
-    <source src="videos/pad-project.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="controls">
-    <button onclick="document.getElementById('padVideo').play()">Play</button>
-    <button onclick="document.getElementById('padVideo').pause()">Stop</button>
-  </div>
-  <!-- Additional video -->
-  <video id="padVideo2" autoplay muted loop playsinline controlsList="nodownload">
-    <source src="videos/pad-talks.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="controls">
-    <button onclick="document.getElementById('padVideo2').play()">Play</button>
-    <button onclick="document.getElementById('padVideo2').pause()">Stop</button>
+
+  <div class="video-block">
+    <video id="padVideo" autoplay muted loop playsinline controlsList="nodownload">
+      <source src="videos/WhatsApp Video 2025-06-02 at 20.53.09_282e1fe5.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="controls">
+      <button onclick="document.getElementById('padVideo').play()">Play</button>
+      <button onclick="document.getElementById('padVideo').pause()">Pause</button>
+    </div>
   </div>
 
-  <!-- Another additional video -->
-  <video id="padVideo3" autoplay muted loop playsinline controlsList="nodownload">
-    <source src="videos/pad-recap.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="controls">
-    <button onclick="document.getElementById('padVideo3').play()">Play</button>
-    <button onclick="document.getElementById('padVideo3').pause()">Stop</button>
+  <div class="video-block">
+    <video id="padVideo2" autoplay muted loop playsinline controlsList="nodownload">
+      <source src="videos/WhatsApp Video 2025-06-02 at 20.52.43_a462967f.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="controls">
+      <button onclick="document.getElementById('padVideo2').play()">Play</button>
+      <button onclick="document.getElementById('padVideo2').pause()">Pause</button>
+    </div>
+  </div>
+
+  <div class="video-block">
+    <video id="padVideo3" autoplay muted loop playsinline controlsList="nodownload">
+      <source src="videos/WhatsApp Video 2025-06-02 at 20.54.06_65800c80.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="controls">
+      <button onclick="document.getElementById('padVideo3').play()">Play</button>
+      <button onclick="document.getElementById('padVideo3').pause()">Pause</button>
+    </div>
   </div>
 </div>
+
 
 <div class="section testimonies fade-in">
   <h3>Real Stories</h3>
