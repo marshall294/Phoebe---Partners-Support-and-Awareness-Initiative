@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Pad 4,000 Girls</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+    }
+
+    header {
+      background-color: #c2185b;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .image-gallery img {
+      border: 5px solid #c2185b;
+      border-radius: 8px;
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .video-frame {
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    video {
+      width: 80%;
+      max-width: 600px;
+      border: 5px solid #c2185b;
+      border-radius: 8px;
+    }
+
+    .controls {
+      margin-top: 1rem;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 1rem;
+      background-color: #c2185b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .testimonies {
+      margin-top: 3rem;
+    }
+
+    .testimonies h3 {
+      text-align: center;
+      color: #c2185b;
+    }
+
+    .testimony-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #fff0f5;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card p {
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #f8bbd0;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Project Pad 4,000 Girls</h1>
+  <p>Empowering girls through menstrual health education and dignity</p>
+</header>
+
+<div class="section">
+  <h2>Photo Highlights</h2>
+  <div class="image-gallery">
+    <img src="images/pad1.jpg" alt="Pad distribution">
+    <img src="images/pad2.jpg" alt="Girls smiling with pads">
+    <img src="images/pad3.jpg" alt="Educational session">
+    <img src="images/pad4.jpg" alt="Volunteers and beneficiaries">
+  </div>
+
+  <div class="video-frame">
+    <h2>Watch Our Mission in Action</h2>
+    <video id="padVideo" controlsList="nodownload">
+      <source src="videos/pad-project.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="controls">
+      <button onclick="document.getElementById('padVideo').play()">Play</button>
+      <button onclick="document.getElementById('padVideo').pause()">Stop</button>
+    </div>
+  </div>
+
+  <div class="testimonies">
+    <h3>Real Stories</h3>
+    <div class="testimony-cards">
+      <div class="card">
+        <p><strong>Fatima (Age 14)</strong></p>
+        <p>“Before this project, I missed school during my period. Now I attend confidently.”</p>
+      </div>
+      <div class="card">
+        <p><strong>Grace (Volunteer)</strong></p>
+        <p>“Helping these girls changed my perspective on dignity and education.”</p>
+      </div>
+      <div class="card">
+        <p><strong>Amina (Age 13)</strong></p>
+        <p>“I never thought someone cared this much. Thank you for making me feel seen.”</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Project Pad 4,000 Girls Initiative. All rights reserved.
+</footer>
+
+</body>
+</html>
